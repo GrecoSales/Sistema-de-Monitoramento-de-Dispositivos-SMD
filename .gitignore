@@ -1,0 +1,12 @@
+# Maven
+target/
+**/target/
+
+# Java
+*.class
+
+# VS Code
+.vscode/
+
+# Logs
+*.log

@@ -1,5 +1,5 @@
 package shared;
 
-public class main {
+public class Main {
     
 }
