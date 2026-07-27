@@ -1,6 +1,7 @@
 package network;
 
 import config.AgentConfig;
+import network.ServerDiscovery;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -14,9 +15,6 @@ public class ServerConnection {
     private boolean connected;
 
     public boolean connect() {
-        config.getServerAddress();
-        config.getServerPort();
-        config.getConnectionTimeout();
 
         
     }

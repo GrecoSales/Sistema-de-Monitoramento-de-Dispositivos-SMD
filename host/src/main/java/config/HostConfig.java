@@ -5,7 +5,8 @@ import java.net.UnknownHostException;
 
 public class HostConfig {
     private String serverAddress;
-    private int serverPort = 50505;
+    private int serverPort = 50505; // Porta para conexão TCP
+    private int discoveryPort = 9000; // Porta para conexão UDP
     private int maxClients = 10;
     private int connectionTimeout = 5000;
     
@@ -24,6 +25,10 @@ public class HostConfig {
 
     public int getServerPort() {
         return serverPort;
+    }
+
+    public int getDiscoveryPort() {
+        return discoveryPort;
     }
 
     public int getMaxClients() {
