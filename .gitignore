@@ -2,6 +2,8 @@
 target/
 **/target/
 
+**/dependency-reduced-pom.xml
+
 # Java
 *.class
 
@@ -10,3 +12,9 @@ target/
 
 # Logs
 *.log
+
+# Jpackage
+/installer/SMD-Agent/
+/installer/SMD-Host/
+
+/installer/*.zip

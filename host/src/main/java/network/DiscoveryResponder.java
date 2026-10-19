@@ -16,10 +16,10 @@ public class DiscoveryResponder {
     public DiscoveryResponder (HostConfig config) {
         this.config = config;
 
-        response = (config.getServerAddress() + ";" + config.getServerPort()).getBytes(StandardCharsets.UTF_8);
+        response = (config.getServerAddress() + ";" + config.getServerPort() + ";" +config.getIntervalConnection()).getBytes(StandardCharsets.UTF_8);
     }
 
-    public void Start () {
+    public void start () {
         try {
             DatagramSocket socket = new DatagramSocket(config.getDiscoveryPort());
 
@@ -41,14 +41,5 @@ public class DiscoveryResponder {
         catch (IOException error) {
             error.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-
-    HostConfig config = new HostConfig();
-
-    DiscoveryResponder responder = new DiscoveryResponder(config);
-
-    responder.Start();
     }
 }

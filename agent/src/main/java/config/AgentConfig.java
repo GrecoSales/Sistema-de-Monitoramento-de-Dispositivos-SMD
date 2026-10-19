@@ -8,14 +8,6 @@ public class AgentConfig {
     private int reconnectInterval;
     private int connectionTimeout;
 
-    public AgentConfig(String serverAddress, int serverPort, int collectionInterval, int reconnectInterval, int connectionTimeout) {
-        this.serverAddress = serverAddress;
-        this.serverPort = serverPort;
-        this.collectionInterval = collectionInterval;
-        this.reconnectInterval = reconnectInterval;
-        this.connectionTimeout = connectionTimeout;
-    }
-
     public String getServerAddress() {
         return serverAddress;
     }

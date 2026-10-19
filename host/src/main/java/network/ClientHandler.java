@@ -1,22 +1,47 @@
 package network;
 
-import config.HostConfig;
-
 import java.io.BufferedReader;
-import java.io.PrintWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class ClientHandler {
-    private HostConfig config;
     private Socket socket;
-    private PrintWriter input;
     private BufferedReader output;
-    private boolean connected;
 
-    public boolean connect () {
-        
+    public ClientHandler(Socket socket) {
+        this.socket = socket;
 
-        return connected =  true;
+        try {
+            output = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        }
+        catch (IOException error) {
+            error.printStackTrace();
+        }
     }
 
+    public String receive() {
+        try {
+            return output.readLine();
+        }
+        catch (IOException error) {
+            error.printStackTrace();
+            return null;
+        }
+    }
+
+    public void disconnect() {
+        try {
+            if (socket != null) {
+                socket.close();
+            }
+        }
+        catch (IOException error) {
+            error.printStackTrace();
+        }
+    }
+
+    public boolean isConnected() {
+        return socket != null && socket.isConnected();
+    }
 }

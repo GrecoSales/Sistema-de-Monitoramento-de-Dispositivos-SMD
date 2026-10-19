@@ -8,6 +8,7 @@ public class HostConfig {
     private int serverPort = 50505; // Porta para conexão TCP
     private int discoveryPort = 9000; // Porta para conexão UDP
     private int maxClients = 10;
+    private int intervalConnection = 5000;
     private int connectionTimeout = 5000;
     
     public HostConfig() {
@@ -33,6 +34,10 @@ public class HostConfig {
 
     public int getMaxClients() {
         return maxClients;
+    }
+
+    public int getIntervalConnection() {
+        return intervalConnection;
     }
 
     public int getConnectionTimeout() {
